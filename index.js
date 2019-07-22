@@ -104,13 +104,8 @@ const tags = async ()=>{
 }
 
 const types1 = async ()=>{
-
-  const list = ['ПСР-проект', 'ПСР-образец'];
-  console.log('in types', list)
-
+  const list = ['ПСР-проект','ПСР-образец','ППУ','ПСС','Лучшие практики','Выученные уроки'];
   for(let i = 0; i < list.length; i++){
-  console.log('in types', list[i])
-
     await axios.post(`${IDEA_API}/api/type`, 
   {
     name: list[i]
