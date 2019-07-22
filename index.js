@@ -92,8 +92,34 @@ const department = async ()=>{
   }
 }
 
+const tags = async ()=>{
+  const randBoxesNum = randomInt();
+
+  for(let i = 0; i < randBoxesNum; i++){
+    await axios.post(`${IDEA_API}/api/tag`, 
+  {
+    name: faker.lorem.words(1)
+  });
+  }
+}
+
+const types1 = async ()=>{
+
+  const list = ['ПСР-проект', 'ПСР-образец'];
+  console.log('in types', list)
+
+  for(let i = 0; i < list.length; i++){
+  console.log('in types', list[i])
+
+    await axios.post(`${IDEA_API}/api/type`, 
+  {
+    name: list[i]
+  });
+  }
+}
+
 
 (async ()=>{
-  department();
+  types1();
 })()
 
